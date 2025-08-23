@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / tooling
+node_modules/
+coverage/
+
+# Python
+__pycache__/
+
+# Env / secrets
+.env
+.env.*
+*.secret
+*.pem
+*.key
+
+# Build / artifacts
+_site/
+dist/
+*.log
+*.zip

@@ -1,0 +1,71 @@
+version: "3.9"
+services:
+  db:
+    image: mariadb:11
+    container_name: seb_db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${DB_NAME:-seb_wp}
+      - MARIADB_USER=${DB_USER:-seb_wp_user}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks: [ seb ]
+
+  redis:
+    image: redis:7-alpine
+    container_name: seb_redis
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks: [ seb ]
+
+  php:
+    build:
+      context: ./docker/php
+    container_name: seb_php
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - wp_data:/var/www/html
+      - ./docker/wordpress/init.sh:/docker/wordpress/init.sh:ro
+    depends_on: [ db, redis ]
+    networks: [ seb ]
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: seb_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - wp_data:/var/www/html:ro
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - certs:/etc/letsencrypt
+    depends_on: [ php ]
+    networks: [ seb ]
+
+  certbot:
+    image: certbot/certbot:v2.11.0
+    container_name: seb_certbot
+    volumes:
+      - certs:/etc/letsencrypt
+      - wp_data:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    networks: [ seb ]
+    entrypoint: /bin/sh
+    command: -c "echo 'Use make ssl-http or configure DNS-01' && tail -f /dev/null"
+
+volumes:
+  mariadb_data:
+  redis_data:
+  wp_data:
+  certs:
+
+networks:
+  seb:
+    driver: bridge
