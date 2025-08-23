@@ -20,7 +20,7 @@ jobs:
           enablement: true
       - name: Add custom domain
         run: echo "docs.sebhosting.com" > docs/CNAME
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: docs
       - uses: actions/deploy-pages@v4
