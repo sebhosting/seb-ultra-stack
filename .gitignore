@@ -1,4 +1,9 @@
 .env
+*.pem
+*.key
+*.crt
 *.log
-vendor/
 node_modules/
+vendor/
+_site/
+.DS_Store

@@ -1,0 +1,1 @@
+If you discover a security issue, email security@sebhosting.com.

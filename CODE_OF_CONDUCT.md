@@ -1,1 +1,1 @@
-Contributor Covenant v2.1
+This project follows the Contributor Covenant v2.1.

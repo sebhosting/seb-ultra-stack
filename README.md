@@ -1,53 +1,49 @@
-
 <p align="center">
-  <img src="docs/SEBUltraStack.png" alt="SEB Ultra Stack Banner" width="100%" />
+  <img src="SEBUltraStack.png" alt="SEB Ultra Stack" width="100%" />
 </p>
 
+<h1 align="center">🔥 SEB Ultra Stack</h1>
 <p align="center">
-  <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.3-blue?logo=php&logoColor=white" /></a>
-  <a href="https://nginx.org/"><img src="https://img.shields.io/badge/Nginx-Latest-green?logo=nginx&logoColor=white" /></a>
-  <a href="https://redis.io/"><img src="https://img.shields.io/badge/Redis-Cache-red?logo=redis&logoColor=white" /></a>
-  <a href="https://wordpress.org/"><img src="https://img.shields.io/badge/WordPress-Multisite-21759B?logo=wordpress&logoColor=white" /></a>
-  <a href="https://woocommerce.com/"><img src="https://img.shields.io/badge/WooCommerce-Ready-96588A?logo=woocommerce&logoColor=white" /></a>
-  <a href="https://docs.sebhosting.com"><img src="https://img.shields.io/badge/docs-live-blue?logo=github" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
-  <a href="https://github.com/sebhosting/seb-ultra-stack/releases"><img src="https://img.shields.io/github/v/release/sebhosting/seb-ultra-stack?label=Release&logo=github" /></a>
+  WordPress Multisite (subdomains) + Nginx + Redis + Cloudflare + Let's Encrypt — production-ready and fast.
+</p>
+<p align="center">
+  <a href="https://github.com/sebhosting/seb-ultra-stack/actions"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/sebhosting/seb-ultra-stack/ci.yml?label=CI"></a>
+  <a href="https://github.com/sebhosting/seb-ultra-stack/releases"><img alt="Release" src="https://img.shields.io/github/v/release/sebhosting/seb-ultra-stack?display_name=tag"></a>
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-8.3-informational">
+  <img alt="Nginx" src="https://img.shields.io/badge/Nginx-High%20Perf-success">
+  <img alt="Redis" src="https://img.shields.io/badge/Redis-Object%20Cache-red">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-blue">
+  <a href="https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ"><img alt="Sponsor" src="https://img.shields.io/badge/Sponsor-PayPal-00457C?logo=paypal"></a>
 </p>
 
 ---
 
-# ⚡ SEB Ultra Stack
-🚀 The Ultimate WordPress Multisite + WooCommerce stack — Automated, Hardened, and Fast.
+## Quick Start
 
-## ✨ Highlights
-- One‑click interactive installer (prompts for domain/email/DB; optional Cloudflare + PayPal)
-- WordPress Multisite (subdomains) + WooCommerce‑ready
-- Nginx + PHP‑FPM + Redis + MariaDB
-- Auto HTTPS via Let's Encrypt (HTTP‑01 or DNS‑01 with Cloudflare API)
-- Production Docker Compose with `nginx-proxy` + `acme-companion`
-- CI (lint), Release (auto tags), Docs (auto‑deploy to GitHub Pages)
-- Security‑first defaults; secrets live in `.env` (see `.env.example`)
-
-## 🚀 Quick Start
 ```bash
-cp .env.example .env
-./install.sh                # answer prompts; safe to re‑run
-docker compose up -d
+curl -fsSL https://raw.githubusercontent.com/sebhosting/seb-ultra-stack/main/install.sh | bash
 ```
 
-## 🧩 Recommended Plugins
-WooCommerce • Jetpack • FluentSMTP • Wordfence • Redis Object Cache • UpdraftPlus • Really Simple SSL
+Or clone and run installer locally:
 
-## 📚 Docs
-Full documentation auto‑published: https://docs.sebhosting.com
+```bash
+git clone git@github.com:sebhosting/seb-ultra-stack.git
+cd seb-ultra-stack
+chmod +x install.sh && ./install.sh
+```
 
 ---
 
-## 🛡 Security
-No secrets in repo. Keep private values in `.env` only.
+## Features
 
-## 🤝 Contributing
-See CONTRIBUTING.md — PRs welcome!
+- WordPress Multisite (subdomains) with WooCommerce-ready config
+- Nginx tuned for HTTP/2, Gzip (+ optional Brotli)
+- Redis object cache
+- Cloudflare optional + DNS-01 wildcard Let's Encrypt
+- Hardened basics: optional UFW/fail2ban, secure headers
+- CI (ShellCheck + Yamllint), Docs deploy, Release Drafter
+- Dark docs at **https://docs.sebhosting.com** (GitHub Pages)
 
-## 📄 License
-MIT
+## Sponsor
+
+If this helps you, consider sponsoring: **https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ**
