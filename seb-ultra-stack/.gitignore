@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+_site/
+.jekyll-cache/
+vendor/
+__pycache__/
+*.pem
+*.crt
+*.key
+*.ini
+*.conf
+.env
+secrets.env
+db-root-password.txt

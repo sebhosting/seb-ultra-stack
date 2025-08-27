@@ -1,0 +1,12 @@
+
+title: SEB Ultra Stack
+description: Ultimate WordPress Multisite + WooCommerce Stack for Ubuntu 24.04
+theme: minima
+minima:
+  skin: dark
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+url: https://docs.sebhosting.com
+baseurl:

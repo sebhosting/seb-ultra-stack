@@ -1,0 +1,19 @@
+name: ci
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+      - name: Markdown Lint
+        uses: avto-dev/markdown-lint@v1
+      - name: YAML Lint
+        uses: ibiqlik/action-yamllint@v3

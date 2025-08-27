@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Conventional Commits guard
+msgfile="$1"
+msg="$(head -n1 "$msgfile")"
+re='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|sec)(\(.+\))?: .+'
+if [[ ! "$msg" =~ $re ]]; then
+  echo "Conventional Commit required, e.g.: feat(api): add endpoint"
+  echo "Your message: $msg"
+  exit 1
+fi
