@@ -1,6 +1,6 @@
 # SEB Ultra Stack 🚀 v1.3.9
 
-![Banner](./assets/banner.png)
+![Banner](./assets/banner.svg)
 
 Ultimate badass hosting stack with one-click install, auto-deploy, docs, and workflows.
 
