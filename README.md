@@ -2,7 +2,7 @@
 
 ![Banner](./assets/banner.svg)
 
-Ultimate hosting stack with one-click install, auto-deploy, docs, and workflows.
+⚡ The Ultimate WordPress Multisite + WooCommerce Stack — Nginx, PHP 8.3, Redis, MariaDB, Cloudflare SSL, UFW & Fail2Ban. Secure. Scalable. Blazing Fast! 
 
 [![CI](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml)
 [![Docs](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/deploy-docs.yml/badge.svg)](https://docs.sebhosting.com)
