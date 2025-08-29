@@ -1,5 +1,3 @@
-# SEB Ultra Stack 🚀 v1.3.9
-
 ![Banner](./assets/banner.png)
 
 [![CI](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml)
