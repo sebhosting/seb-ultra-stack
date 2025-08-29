@@ -2,7 +2,7 @@
 
 ![Banner](./assets/banner.svg)
 
-Ultimate badass hosting stack with one-click install, auto-deploy, docs, and workflows.
+Ultimate hosting stack with one-click install, auto-deploy, docs, and workflows.
 
 [![CI](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml)
 [![Docs](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/deploy-docs.yml/badge.svg)](https://docs.sebhosting.com)
