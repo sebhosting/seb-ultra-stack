@@ -281,7 +281,7 @@
             <div class="right-section">
                 <div class="paypal-section">
                     <div class="support-text">💪 Support the Stack</div>
-                    <button class="paypal-button" onclick="window.open('https://www.paypal.com/donate/?business=YOUR_PAYPAL_EMAIL&no_recurring=0&currency_code=USD', '_blank')">
+                    <button class="paypal-button" onclick="window.open('https://www.paypal.com/donate/?business=seb@sebhosting.com&no_recurring=0&currency_code=USD', '_blank')">
                         💳 Donate via PayPal
                     </button>
                 </div>
