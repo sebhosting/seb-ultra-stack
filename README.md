@@ -22,6 +22,5 @@ curl -sSL https://sebhosting.com/install.sh | bash
 ```
 ---
     💪 Support This Project
----
 💳 Donate via PayPal | ⭐ Star this repo
 ---
