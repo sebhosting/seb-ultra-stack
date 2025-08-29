@@ -20,11 +20,11 @@
 ---
 🛠️ Features
 
-✅ One-click installation
-✅ Auto-deployment workflows
-✅ Comprehensive documentation
-✅ Production-ready configuration
-✅ Scalable architecture
+- ✅ One-click installation
+- ✅ Auto-deployment workflows
+- ✅ Comprehensive documentation
+- ✅ Production-ready configuration
+- ✅ Scalable architecture
 ---
 🚀 Install
 ```bash
