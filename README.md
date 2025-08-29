@@ -20,7 +20,26 @@
 ```bash
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
----
-    💪 Support This Project
-💳 Donate via PayPal | ⭐ Star this repo
----
+💪 Support This Project
+💳 Donate via PayPal • ⭐ Star this repo
+
+📋 What's Included
+
+WordPress Multisite - Manage multiple sites
+WooCommerce - Complete e-commerce solution
+High Performance - Nginx + PHP 8.3 + Redis caching
+Security - UFW firewall + Fail2Ban protection
+SSL - Cloudflare integration
+Database - Optimized MariaDB setup
+
+🛠️ Features
+
+✅ One-click installation
+✅ Auto-deployment workflows
+✅ Comprehensive documentation
+✅ Production-ready configuration
+✅ Scalable architecture
+
+Made with 💀 by SEB Hosting
+
+
