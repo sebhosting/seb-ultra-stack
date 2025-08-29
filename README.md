@@ -30,8 +30,7 @@
 ```bash
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
-- <a=href"https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ">💪 Support This Project</a>
-
+- 💪 Support This Project
 - 💳 Donate via PayPal 
 - ⭐ Star this repo
 
