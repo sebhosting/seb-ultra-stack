@@ -1,6 +1,6 @@
 # SEB Ultra Stack 🚀 v1.3.9
 
-![Banner](./assets/banner.svg)
+![Banner](./assets/banner.png)
 
 ⚡ The Ultimate WordPress Multisite + WooCommerce Stack — Nginx, PHP 8.3, Redis, MariaDB, Cloudflare SSL, UFW & Fail2Ban. Secure. Scalable. Blazing Fast! 
 
@@ -20,4 +20,8 @@
 ```bash
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
-    
+---
+    💪 Support This Project
+---
+💳 Donate via PayPal | ⭐ Star this repo
+---
