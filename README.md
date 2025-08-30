@@ -1,4 +1,4 @@
-![SEB Ultra Stack Banner](/dosc/assets/banner.png)
+![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
 # ⚡ SEB Ultra Stack
 ### The Ultimate WordPress Multisite + WooCommerce Stack
