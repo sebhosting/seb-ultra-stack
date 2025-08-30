@@ -1,57 +1,53 @@
-title: "SEB Ultra Stack Documentation"
-description: "⚡ The Ultimate WordPress Multisite + WooCommerce Stack - Bad to the Bone Documentation"
-baseurl: "/seb-ultra-stack"
-url: "https://sebhosting.github.io"
+# _config.yml
+title: SEB Ultra Stack Documentation
+description: Complete documentation for the ultimate WordPress hosting stack
+url: https://sebhosting.github.io
+baseurl: /seb-ultra-stack
 
-# Theme
-theme: jekyll-theme-midnight
+# Theme settings
+theme: jekyll-theme-cayman
+# or for a more professional look:
+# remote_theme: pages-themes/architect@v0.2.0
 
-# Custom variables for Dark Theme
-author: "SEB Hosting"
-github_username: sebhosting
-repository: seb-ultra-stack
-
-# Enable syntax highlighting
-highlighter: rouge
+# Markdown settings
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
 
-# SEO Settings
-seo:
-  title: "SEB Ultra Stack Documentation"
-  description: "Get ready for blazing-fast, secure, and scalable WordPress hosting with SEB Ultra Stack."
-  image: "/assets/banner.png"
-  keywords:
-    - WordPress
-    - Hosting
-    - WooCommerce
-    - Ultra Stack
-    - Performance
-    - Security
-
-# Plugins
+# Plugin settings
 plugins:
-  - jekyll-sitemap
   - jekyll-feed
-  - jekyll-sass-converter  # Sass to CSS converter
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Language
-lang: en
+# SEO settings
+author: SEB Hosting Team
+twitter:
+  username: sebhosting
+social:
+  name: SEB Hosting
+  links:
+    - https://twitter.com/sebhosting
+    - https://github.com/sebhosting
 
-# Sass Settings
-sass:
-  style: compressed  # Can change to 'expanded' for debugging
-  load_paths:
-    - "assets/css"   # Ensures Jekyll knows where to find the Sass files
+# Navigation
+header_pages:
+  - installation/index.md
+  - configuration/index.md
+  - performance/index.md
+  - security/index.md
+  - multisite/index.md
+  - woocommerce/index.md
+  - backup/index.md
+  - troubleshooting/index.md
+  - faq/index.md
 
-# Enable auto-generated sitemap
-sitemap:
-  exclude:
-    - /assets/
-    - /test/
-
-# Additional settings
-exclude:
-  - README.md
-  - LICENSE
-  - .git
-  - .github
+# Footer links
+footer_links:
+  - title: GitHub
+    url: https://github.com/sebhosting/seb-ultra-stack
+  - title: Discord
+    url: https://discord.gg/sebhosting
+  - title: Support
+    url: mailto:support@sebhosting.com
