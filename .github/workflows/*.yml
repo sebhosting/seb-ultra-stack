@@ -1,0 +1,6 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"  # Only run when files in 'docs/' directory change
