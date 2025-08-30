@@ -1,5 +1,4 @@
-/* assets/css/style.scss */
----
+scss---
 ---
 
 @import "{{ site.theme }}";
@@ -179,33 +178,7 @@ blockquote p {
   margin: 0 !important;
 }
 
-/* Lists */
-ul, ol {
-  padding-left: 2rem !important;
-}
-
-li {
-  margin: 0.5rem 0 !important;
-  position: relative !important;
-}
-
-ul li::before {
-  content: '⚡' !important;
-  color: var(--primary) !important;
-  position: absolute !important;
-  left: -1.5rem !important;
-}
-
-/* Warning/Success boxes */
-.warning, .success {
-  padding: 1.5rem !important;
-  margin: 2rem 0 !important;
-  border-radius: 10px !important;
-  border-left: 4px solid !important;
-  position: relative !important;
-}
-
-/* Button styles for links that look like buttons */
+/* Button styles for links */
 a[href*="paypal"], a[href*="github"], a[href*="download"] {
   background: linear-gradient(45deg, var(--primary), #4ecdc4) !important;
   color: var(--dark) !important;
@@ -233,71 +206,7 @@ a[href*="paypal"] {
   color: white !important;
 }
 
-/* Horizontal rules */
-hr {
-  border: none !important;
-  height: 2px !important;
-  background: linear-gradient(to right, transparent, var(--primary), transparent) !important;
-  margin: 3rem 0 !important;
-}
-
-/* Emoji styling */
-h1 img, h2 img, h3 img {
-  display: inline !important;
-  margin: 0 0.2rem !important;
-  vertical-align: middle !important;
-}
-
-/* Navigation improvements */
-nav {
-  background: var(--darker) !important;
-  padding: 1rem !important;
-  border-radius: 10px !important;
-  margin-bottom: 2rem !important;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem !important;
-    margin-top: 1rem !important;
-  }
-  
-  header h1 {
-    font-size: 2rem !important;
-  }
-  
-  pre {
-    padding: 1rem !important;
-    font-size: 0.85rem !important;
-  }
-  
-  table {
-    font-size: 0.9rem !important;
-  }
-  
-  th, td {
-    padding: 0.5rem !important;
-  }
-}
-
-/* Scroll animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeInUp 0.6s ease-out !important;
-}
-
-/* Lightning effects */
+/* Lightning animations */
 @keyframes lightning {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -308,79 +217,4 @@ h1::after, h2::after {
   color: var(--accent) !important;
   animation: lightning 2s infinite !important;
   margin-left: 0.5rem !important;
-}
-
-/* Custom table of contents styling */
-#markdown-toc {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border: 1px solid var(--primary) !important;
-  border-radius: 10px !important;
-  padding: 2rem !important;
-  margin: 2rem 0 !important;
-}
-
-#markdown-toc::before {
-  content: '📖 Table of Contents' !important;
-  display: block !important;
-  font-size: 1.3rem !important;
-  font-weight: bold !important;
-  color: var(--primary) !important;
-  margin-bottom: 1rem !important;
-  text-align: center !important;
-}
-
-#markdown-toc a {
-  color: var(--text-muted) !important;
-  border: none !important;
-}
-
-#markdown-toc a:hover {
-  color: var(--primary) !important;
-}
-
-/* Footer */
-footer {
-  background: var(--dark) !important;
-  color: var(--text-muted) !important;
-  text-align: center !important;
-  padding: 2rem !important;
-  margin-top: 4rem !important;
-  border-top: 2px solid var(--primary) !important;
-}
-
-/* Custom badges */
-.badge {
-  background: linear-gradient(45deg, var(--secondary), var(--accent)) !important;
-  color: var(--dark) !important;
-  padding: 0.3rem 0.8rem !important;
-  border-radius: 15px !important;
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  display: inline-block !important;
-  margin: 0.2rem !important;
-}
-
-/* Glowing effects for important elements */
-.glow {
-  box-shadow: 0 0 20px var(--shadow) !important;
-  border: 1px solid var(--primary) !important;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 12px !important;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--dark) !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary) !important;
-  border-radius: 6px !important;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent) !important;
 }
