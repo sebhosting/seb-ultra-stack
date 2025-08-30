@@ -33,15 +33,14 @@
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
 ---
-💪 Support This Project
+##💪 Support This Project
+
 **[💳 Donate via PayPal](https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ)**  
 - ⭐ Star this repo
 ---
 ## 📖 Documentation
 **[🔥 View Complete Documentation](https://docs.sebhosting.com)** | **[📖 GitHub Pages](https://sebhosting.github.io/seb-ultra-stack/)**
-
-
-
+---
 
 Made with 💀 by SEB Hosting
 
