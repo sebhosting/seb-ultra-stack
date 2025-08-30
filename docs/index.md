@@ -1,6 +1,3 @@
----
-layout: default
----
 
 ![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
