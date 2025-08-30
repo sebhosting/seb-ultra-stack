@@ -22,7 +22,8 @@ curl -sSL https://sebhosting.com/install.sh | bash
 **That's it.** Seriously. Grab a coffee while we handle the rest.
 
 ---
-
+**[🔥 View Complete Documentation](https://docs.sebhosting.com)** | **[📖 GitHub Pages](https://sebhosting.github.io/seb-ultra-stack/)**
+---
 ## 🎯 What You Get
 
 ### ⚡ **Performance Beast**
