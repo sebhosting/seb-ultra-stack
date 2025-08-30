@@ -4,6 +4,9 @@
 [![Docs](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/deploy-docs.yml/badge.svg)](https://docs.sebhosting.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ---
+## 📖 Documentation
+**[🔥 View Complete Documentation](https://docs.sebhosting.com)** | **[📖 GitHub Pages](https://sebhosting.github.io/seb-ultra-stack/)**
+---
 - ⚡ The Ultimate WordPress Multisite + WooCommerce Stack
 - ⚡ Nginx, PHP 8.3, Redis, MariaDB, Cloudflare SSL, UFW & Fail2Ban.
 - ⚡ Secure. Scalable. Blazing Fast! 
