@@ -1,4 +1,4 @@
-![Banner](./assets/banner.png)
+![Banner](./docs/assets/banner.png)
 
 [![CI](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml)
 [![Docs](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/deploy-docs.yml/badge.svg)](https://docs.sebhosting.com)
