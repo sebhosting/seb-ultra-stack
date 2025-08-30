@@ -8,7 +8,7 @@ description: Complete documentation for the ultimate WordPress hosting stack
 
 Welcome to the comprehensive documentation for **SEB Ultra Stack** - the ultimate WordPress Multisite + WooCommerce hosting solution.
 
-![SEB Ultra Stack Banner](../banner.png)
+![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
 ## 🚀 Quick Start
 
