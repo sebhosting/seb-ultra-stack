@@ -1,8 +1,3 @@
-scss---
----
-
-@import "{{ site.theme }}";
-
 /* SEB Ultra Stack - Bad to the Bone Dark Theme */
 :root {
   --primary: #00ff88;
@@ -17,7 +12,7 @@ scss---
   --shadow: rgba(0, 255, 136, 0.2);
 }
 
-/* Override default theme colors */
+/* Background for the dark theme */
 body {
   background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 50%, var(--blue) 100%) !important;
   color: var(--text) !important;
@@ -30,6 +25,20 @@ header {
   background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%) !important;
   border-bottom: 3px solid var(--primary) !important;
   padding: 2rem 0 !important;
+}
+
+/* Banner Image Styling */
+header::before {
+  content: "";
+  background: url("/assets/banner.png") no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;  /* Adjust opacity for overlay effect */
+  z-index: -1;
 }
 
 header h1 {
@@ -49,7 +58,7 @@ header p {
   letter-spacing: 2px !important;
 }
 
-/* Main content container */
+/* Content container */
 .container {
   max-width: 1200px !important;
   margin: 0 auto !important;
@@ -95,126 +104,4 @@ a:hover {
   color: var(--accent) !important;
   border-bottom-color: var(--accent) !important;
   text-shadow: 0 0 8px rgba(255, 211, 61, 0.4) !important;
-}
-
-/* Code blocks */
-pre, code {
-  background: var(--dark) !important;
-  border: 1px solid var(--primary) !important;
-  border-radius: 8px !important;
-  color: var(--primary) !important;
-  font-family: 'Courier New', monospace !important;
-}
-
-pre {
-  padding: 1.5rem !important;
-  margin: 1.5rem 0 !important;
-  overflow-x: auto !important;
-  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1) !important;
-}
-
-code {
-  padding: 0.2rem 0.4rem !important;
-  font-size: 0.9rem !important;
-}
-
-/* Tables */
-table {
-  width: 100% !important;
-  border-collapse: collapse !important;
-  margin: 2rem 0 !important;
-  background: rgba(0, 0, 0, 0.2) !important;
-  border-radius: 10px !important;
-  overflow: hidden !important;
-}
-
-th {
-  background: linear-gradient(45deg, var(--primary), #4ecdc4) !important;
-  color: var(--dark) !important;
-  font-weight: bold !important;
-  padding: 1rem !important;
-  text-align: left !important;
-}
-
-td {
-  padding: 1rem !important;
-  border-bottom: 1px solid var(--border) !important;
-  color: var(--text-muted) !important;
-}
-
-tr:hover {
-  background: rgba(0, 255, 136, 0.05) !important;
-}
-
-/* Blockquotes */
-blockquote {
-  background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(78, 205, 196, 0.1)) !important;
-  border-left: 4px solid var(--primary) !important;
-  padding: 1.5rem !important;
-  margin: 2rem 0 !important;
-  border-radius: 5px !important;
-  position: relative !important;
-}
-
-blockquote::before {
-  content: '⚡' !important;
-  position: absolute !important;
-  top: 1rem !important;
-  left: -15px !important;
-  background: var(--primary) !important;
-  color: var(--dark) !important;
-  width: 30px !important;
-  height: 30px !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 1.2rem !important;
-}
-
-blockquote p {
-  color: var(--text) !important;
-  font-weight: bold !important;
-  margin: 0 !important;
-}
-
-/* Button styles for links */
-a[href*="paypal"], a[href*="github"], a[href*="download"] {
-  background: linear-gradient(45deg, var(--primary), #4ecdc4) !important;
-  color: var(--dark) !important;
-  padding: 12px 25px !important;
-  border-radius: 25px !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  display: inline-block !important;
-  margin: 10px 10px 10px 0 !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3) !important;
-}
-
-a[href*="paypal"]:hover, a[href*="github"]:hover, a[href*="download"]:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4) !important;
-  text-shadow: none !important;
-}
-
-a[href*="paypal"] {
-  background: linear-gradient(45deg, #0070ba, #003087) !important;
-  color: white !important;
-}
-
-/* Lightning animations */
-@keyframes lightning {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-h1::after, h2::after {
-  content: '⚡' !important;
-  color: var(--accent) !important;
-  animation: lightning 2s infinite !important;
-  margin-left: 0.5rem !important;
 }
