@@ -1,6 +1,12 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main  # You can change this to your main branch or any other branch you need to build on
+  pull_request:
+    branches:
+      - main  # Ensure PRs are also built
 
 jobs:
   build:
@@ -8,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Updated to v4
         with:
           node-version: '16'  # Specify your Node.js version here
 
@@ -25,3 +31,4 @@ jobs:
 
       - name: Run tests (optional)
         run: npm test  # If you have tests set up
+
