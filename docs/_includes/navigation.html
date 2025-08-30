@@ -1,0 +1,16 @@
+<nav class="docs-nav">
+  <div class="nav-container">
+    <h3>Documentation</h3>
+    <ul class="nav-list">
+      <li><a href="{{ '/installation/' | relative_url }}" {% if page.url contains 'installation' %}class="active"{% endif %}>🚀 Installation</a></li>
+      <li><a href="{{ '/configuration/' | relative_url }}" {% if page.url contains 'configuration' %}class="active"{% endif %}>🔧 Configuration</a></li>
+      <li><a href="{{ '/performance/' | relative_url }}" {% if page.url contains 'performance' %}class="active"{% endif %}>⚡ Performance</a></li>
+      <li><a href="{{ '/security/' | relative_url }}" {% if page.url contains 'security' %}class="active"{% endif %}>🛡️ Security</a></li>
+      <li><a href="{{ '/multisite/' | relative_url }}" {% if page.url contains 'multisite' %}class="active"{% endif %}>🌐 Multisite</a></li>
+      <li><a href="{{ '/woocommerce/' | relative_url }}" {% if page.url contains 'woocommerce' %}class="active"{% endif %}>🛒 WooCommerce</a></li>
+      <li><a href="{{ '/backup/' | relative_url }}" {% if page.url contains 'backup' %}class="active"{% endif %}>🔄 Backup</a></li>
+      <li><a href="{{ '/troubleshooting/' | relative_url }}" {% if page.url contains 'troubleshooting' %}class="active"{% endif %}>🚨 Troubleshooting</a></li>
+      <li><a href="{{ '/faq/' | relative_url }}" {% if page.url contains 'faq' %}class="active"{% endif %}>❓ FAQ</a></li>
+    </ul>
+  </div>
+</nav>
