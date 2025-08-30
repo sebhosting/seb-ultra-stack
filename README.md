@@ -1,6 +1,6 @@
 ![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
-# ⚡ SEB Ultra Stack
+# 🔥 SEB Ultra Stack - The Ultimate Wordpress Multisite Server Stack 🔥
 ### The Ultimate WordPress Multisite + WooCommerce Stack
 > **Nginx • PHP 8.4 • Redis • MariaDB • Cloudflare SSL • UFW • Fail2Ban**  
 > *Secure. Scalable. Blazing Fast.*
@@ -436,4 +436,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-> **Need custom hosting solutions?** Contact us at [hello@sebhosting.com](mailto:hello@sebhosting.com)
+> **Need custom hosting solutions?** Contact us at [hello@sebhosting.com](mailto:info@sebhosting.com)
