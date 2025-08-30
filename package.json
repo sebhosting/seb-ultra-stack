@@ -1,6 +1,6 @@
 {
   "name": "seb-ultra-stack",
-  "version": "1.0.28",
+  "version": "1.0.36",
   "description": "About",
   "main": "index.js",
   "directories": {
@@ -11,9 +11,9 @@
   }
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebhosting/seb-ultra-stack.git"
+    "url": "https://github.com/sebhosting/seb-ultra-stack"
   },
-  "author": "SEB",
+  "author": "SEBHosting",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebhosting/seb-ultra-stack/issues"
