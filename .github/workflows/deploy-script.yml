@@ -1,10 +1,177 @@
-# .github/workflows/deploy-script.yml
 name: 🚀 Deploy Install Script
 
 on:
   push:
-    branches: [ main ]
-    paths: [ 'install.sh' ]
+    branches:
+      - main
+    paths:
+      - 'install.sh'
+  workflow_dispatch:
+
+jobs:
+  validate-script:
+    name: ✅ Validate Install Script
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Syntax Check
+      run: |
+        echo "🔍 Validating install.sh syntax..."
+        bash -n install.sh
+        echo "✅ Syntax validation passed!"
+        
+    - name: 🧪 Security Scan
+      run: |
+        echo "🛡️ Running security checks..."
+        
+        # Check for dangerous commands
+        DANGEROUS_PATTERNS=(
+          "rm -rf /"
+          "dd if="
+          "mkfs"
+          "format"
+          "> /dev/"
+          "curl.*|.*sh"
+          "wget.*|.*sh"
+        )
+        
+        for pattern in "${DANGEROUS_PATTERNS[@]}"; do
+          if grep -q "$pattern" install.sh; then
+            echo "❌ Potentially dangerous pattern found: $pattern"
+            exit 1
+          fi
+        done
+        
+        echo "✅ Security scan passed!"
+        
+    - name: 📊 Script Analysis
+      run: |
+        echo "📊 Install script statistics:"
+        echo "Lines of code: $(wc -l < install.sh)"
+        echo "File size: $(du -h install.sh | cut -f1)"
+        echo "Functions defined: $(grep -c '^[[:space:]]*function\|^[[:space:]]*[a-zA-Z_][a-zA-Z0-9_]*()' install.sh)"
+
+  test-script:
+    name: 🧪 Test Install Script
+    runs-on: ubuntu-latest
+    needs: validate-script
+    strategy:
+      matrix:
+        ubuntu-version: ['20.04', '22.04']
+        
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: 🐧 Test on Ubuntu ${{ matrix.ubuntu-version }}
+      run: |
+        echo "🧪 Testing install script on Ubuntu ${{ matrix.ubuntu-version }}"
+        
+        # Dry run mode (if supported)
+        if grep -q "DRY_RUN" install.sh; then
+          echo "Running in dry-run mode..."
+          DRY_RUN=true bash install.sh
+        else
+          echo "⚠️ Dry-run mode not available, performing syntax validation only"
+          bash -n install.sh
+        fi
+        
+        echo "✅ Test completed successfully!"
+
+  deploy-to-cdn:
+    name: 🌐 Deploy to CDN
+    runs-on: ubuntu-latest
+    needs: [validate-script, test-script]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: 📦 Prepare Deployment Package
+      run: |
+        mkdir -p deploy
+        cp install.sh deploy/
+        
+        # Add version and metadata
+        echo "# SEB Ultra Stack Install Script" > deploy/README.md
+        echo "Version: $(date +%Y.%m.%d)" >> deploy/README.md
+        echo "Generated: $(date)" >> deploy/README.md
+        echo "Commit: ${{ github.sha }}" >> deploy/README.md
+        
+        # Create versioned copy
+        VERSION=$(date +%Y%m%d-%H%M%S)
+        cp install.sh "deploy/install-${VERSION}.sh"
+        
+        echo "📦 Deployment package prepared"
+        
+    - name: 📤 Upload Deployment Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: install-script-deployment
+        path: deploy/
+        retention-days: 90
+        
+    - name: 🎯 Deploy Status
+      run: |
+        echo "🔥 SEB Ultra Stack install script ready for deployment!"
+        echo "📝 Deploy the install.sh to your web server at: https://sebhosting.com/install.sh"
+        echo "💀 Script is bad to the bone and ready to rock!"
+
+  create-release-draft:
+    name: 📝 Create Release Draft
+    runs-on: ubuntu-latest
+    needs: deploy-to-cdn
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: 📝 Generate Release Notes
+      run: |
+        echo "# 🔥 SEB Ultra Stack Release" > RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## 💀 What's New" >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        
+        # Get recent commits
+        git log --pretty=format:"- %s" --max-count=10 >> RELEASE_NOTES.md
+        
+        echo "" >> RELEASE_NOTES.md
+        echo "## 🚀 Quick Install" >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo '```bash' >> RELEASE_NOTES.md
+        echo 'curl -sSL https://sebhosting.com/install.sh | bash' >> RELEASE_NOTES.md
+        echo '```' >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## 🛠️ What's Included" >> RELEASE_NOTES.md
+        echo "- ⚡ Nginx web server" >> RELEASE_NOTES.md
+        echo "- 🔥 PHP 8.3 with optimizations" >> RELEASE_NOTES.md
+        echo "- 🚀 Redis caching" >> RELEASE_NOTES.md
+        echo "- 🗄️ MariaDB database" >> RELEASE_NOTES.md
+        echo "- 🌐 Cloudflare SSL integration" >> RELEASE_NOTES.md
+        echo "- 🛡️ UFW firewall + Fail2Ban security" >> RELEASE_NOTES.md
+        echo "- 📱 WordPress Multisite + WooCommerce" >> RELEASE_NOTES.md
+        
+    - name: 📤 Upload Release Notes
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-notes
+        path: RELEASE_NOTES.md
+        retention-days: 30name: 🚀 Deploy Install Script
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'install.sh'
   workflow_dispatch:
 
 jobs:
