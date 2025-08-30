@@ -34,7 +34,7 @@ curl -sSL https://sebhosting.com/install.sh | bash
 ```
 ---
 💪 Support This Project
-- 💳 Donate via PayPal 
+**[💳 Donate via PayPal](https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ)**  
 - ⭐ Star this repo
 ---
 ## 📖 Documentation
