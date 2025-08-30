@@ -1,11 +1,10 @@
-**[🔥 View Complete Documentation](https://docs.sebhosting.com)** | **[📖 GitHub Pages](https://sebhosting.github.io/seb-ultra-stack/)**
-
 ![Banner](./assets/banner.png)
 
 [![CI](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/ci.yml)
 [![Docs](https://github.com/sebhosting/seb-ultra-stack/actions/workflows/deploy-docs.yml/badge.svg)](https://docs.sebhosting.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ---
+**[🔥 View Complete Documentation](https://docs.sebhosting.com)**
 ---
 - ⚡ The Ultimate WordPress Multisite + WooCommerce Stack
 - ⚡ Nginx, PHP 8.3, Redis, MariaDB, Cloudflare SSL, UFW & Fail2Ban.
@@ -33,12 +32,13 @@
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
 ---
-##💪 Support This Project
+💪 Support This Project
 
 **[💳 Donate via PayPal](https://www.paypal.com/ncp/payment/Z5ZWDLX6BW9NQ)**  
 - ⭐ Star this repo
 ---
-## 📖 Documentation
+📖 Documentation
+
 **[🔥 View Complete Documentation](https://docs.sebhosting.com)** | **[📖 GitHub Pages](https://sebhosting.github.io/seb-ultra-stack/)**
 ---
 
