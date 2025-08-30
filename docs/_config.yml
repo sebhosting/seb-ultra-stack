@@ -1,4 +1,3 @@
-# _config.yml for GitHub Pages
 title: "SEB Ultra Stack Documentation"
 description: "⚡ The Ultimate WordPress Multisite + WooCommerce Stack - Bad to the Bone Documentation"
 baseurl: "/seb-ultra-stack"
@@ -8,7 +7,7 @@ url: "https://sebhosting.github.io"
 theme: jekyll-theme-midnight
 
 # Custom variables
-author: "SEB"
+author: "SEB Hosting"
 github_username: sebhosting
 repository: seb-ultra-stack
 
@@ -21,25 +20,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-# Custom navigation
-navigation:
-  - title: "🏠 Home"
-    url: "/"
-  - title: "🚀 Installation"
-    url: "#-installation-guide"
-  - title: "🎯 Configuration"
-    url: "#-wordpress-configuration"
-  - title: "💪 Support"
-    url: "#-support--contributing"
-
-# SEO
 lang: en
-twitter:
-  username: sebhosting
-
-# GitHub Pages settings
-safe: true
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
