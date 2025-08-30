@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+  </header>
+  <main>
+    <h2>Welcome to the SEB Ultra Stack Documentation</h2>
+    <p>This is the landing page of your documentation. Start exploring!</p>
+
+    <nav>
+      <ul>
+        <li><a href="{{ site.baseurl }}/getting-started">Getting Started</a></li>
+        <li><a href="{{ site.baseurl }}/configuration">Configuration</a></li>
+        <li><a href="{{ site.baseurl }}/deployment">Deployment</a></li>
+      </ul>
+    </nav>
+  </main>
+  <footer>
+    <p>&copy; 2025 SEB Hosting</p>
+  </footer>
+</body>
+</html>
