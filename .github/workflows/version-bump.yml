@@ -1,0 +1,137 @@
+# .github/workflows/version-bump.yml
+name: 🏷️ Auto Version Bump
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  bump-version:
+    name: 📈 Bump Version
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip-version]')"
+    
+    permissions:
+      contents: write
+      
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+        
+    - name: 🔧 Setup Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+    - name: 📊 Get Current Version
+      id: current_version
+      run: |
+        # Check if VERSION file exists
+        if [ -f VERSION ]; then
+          CURRENT_VERSION=$(cat VERSION)
+        else
+          # Try to get from git tags
+          CURRENT_VERSION=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "0.0.0")
+        fi
+        
+        echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+        echo "📊 Current version: $CURRENT_VERSION"
+        
+    - name: 🔢 Calculate New Version
+      id: new_version
+      run: |
+        CURRENT="${{ steps.current_version.outputs.current_version }}"
+        VERSION_TYPE="${{ github.event.inputs.version_type || 'patch' }}"
+        
+        IFS='.' read -ra VERSION_PARTS <<< "$CURRENT"
+        MAJOR=${VERSION_PARTS[0]:-0}
+        MINOR=${VERSION_PARTS[1]:-0}
+        PATCH=${VERSION_PARTS[2]:-0}
+        
+        case $VERSION_TYPE in
+          major)
+            MAJOR=$((MAJOR + 1))
+            MINOR=0
+            PATCH=0
+            ;;
+          minor)
+            MINOR=$((MINOR + 1))
+            PATCH=0
+            ;;
+          patch)
+            PATCH=$((PATCH + 1))
+            ;;
+        esac
+        
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+        echo "🆕 New version: $NEW_VERSION"
+        
+    - name: 📝 Update Version Files
+      run: |
+        NEW_VERSION="${{ steps.new_version.outputs.new_version }}"
+        
+        # Update VERSION file
+        echo "$NEW_VERSION" > VERSION
+        
+        # Update install script version if it exists
+        if [ -f install.sh ]; then
+          sed -i "s/VERSION=.*/VERSION=\"$NEW_VERSION\"/" install.sh || true
+        fi
+        
+        # Update package.json if it exists
+        if [ -f package.json ]; then
+          sed -i "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" package.json
+        fi
+        
+        echo "✅ Updated version to $NEW_VERSION"
+        
+    - name: 📤 Commit Version Changes
+      run: |
+        NEW_VERSION="${{ steps.new_version.outputs.new_version }}"
+        
+        git add -A
+        
+        if ! git diff --staged --quiet; then
+          git commit -m "🏷️ Bump version to v$NEW_VERSION [skip-version]"
+          git push origin main
+          echo "✅ Committed version bump"
+        else
+          echo "ℹ️ No changes to commit"
+        fi
+        
+    - name: 🏷️ Create Git Tag
+      run: |
+        NEW_VERSION="${{ steps.new_version.outputs.new_version }}"
+        
+        # Create and push tag
+        git tag -a "v$NEW_VERSION" -m "🔥 SEB Ultra Stack v$NEW_VERSION - Bad to the Bone Release 💀"
+        git push origin "v$NEW_VERSION"
+        
+        echo "🏷️ Created and pushed tag v$NEW_VERSION"
+        
+    - name: 📦 Create Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: version-info
+        path: |
+          VERSION
+          install.sh
+        retention-days: 7
+        
+    outputs:
+      new_version: ${{ steps.new_version.outputs.new_version }}
