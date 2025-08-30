@@ -6,7 +6,7 @@ url: "https://sebhosting.github.io"
 # Theme
 theme: jekyll-theme-midnight
 
-# Custom variables
+# Custom variables for Dark Theme
 author: "SEB Hosting"
 github_username: sebhosting
 repository: seb-ultra-stack
@@ -19,16 +19,16 @@ markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-sass-converter  # Ensure Sass to CSS conversion
+  - jekyll-sass-converter  # Sass to CSS converter
 
 # Language
 lang: en
 
-# Sass Settings (optional if needed)
+# Sass Settings
 sass:
-  style: compressed  # You can change this to 'expanded' for easier debugging
+  style: compressed  # Can change to 'expanded' for debugging
   load_paths:
-    - "assets/css"   # Make sure Jekyll knows where to find the Sass files
+    - "assets/css"   # Ensures Jekyll knows where to find the Sass files
 
 # Enable auto-generated sitemap
 sitemap:
