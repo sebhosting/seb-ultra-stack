@@ -1,6 +1,8 @@
 # _config.yml for GitHub Pages
-title: SEB Ultra Stack Documentation
-description: The Ultimate WordPress Multisite + WooCommerce Stack
+title: "SEB Ultra Stack Documentation"
+description: "⚡ The Ultimate WordPress Multisite + WooCommerce Stack - Bad to the Bone Documentation"
+baseurl: "/seb-ultra-stack"
+url: "https://sebhosting.github.io"
 
 # Theme
 theme: jekyll-theme-midnight
@@ -33,7 +35,7 @@ navigation:
 # SEO
 lang: en
 twitter:
-  username: @xSEBHosting
+  username: sebhosting
 
 # GitHub Pages settings
 safe: true
