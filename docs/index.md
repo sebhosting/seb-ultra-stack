@@ -1,11 +1,14 @@
-# ⚡ SEB Ultra Stack Documentation
-## Bad to the Bone WordPress Hosting
-
+---
+layout: default
 ---
 
-> **The Ultimate WordPress Multisite + WooCommerce Stack**  
-> Nginx • PHP 8.3 • Redis • MariaDB • Cloudflare SSL • UFW • Fail2Ban  
-> **Secure. Scalable. Blazing Fast.** 💀
+![SEB Ultra Stack Banner](/assets/banner.png)
+
+# ⚡ SEB Ultra Stack Documentation
+Bad to the Bone WordPress Hosting  
+The Ultimate WordPress Multisite + WooCommerce Stack  
+Nginx • PHP 8.3 • Redis • MariaDB • Cloudflare SSL • UFW • Fail2Ban  
+Secure. Scalable. Blazing Fast. 💀
 
 ---
 
