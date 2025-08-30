@@ -1,0 +1,22 @@
+{
+  "name": "seb-ultra-stack",
+  "version": "1.0.27",
+  "description": "About",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebhosting/seb-ultra-stack.git"
+  },
+  "author": "SEB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebhosting/seb-ultra-stack/issues"
+  },
+  "homepage": "https://github.com/sebhosting/seb-ultra-stack#readme"
+}
