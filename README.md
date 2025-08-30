@@ -31,6 +31,8 @@
 ```bash
 curl -sSL https://sebhosting.com/install.sh | bash
 ```
+🧩 Recommended Plugins
+   • WooCommerce • Jetpack • FluentSMTP • Wordfence • Redis Object Cache • UpdraftPlus • Really Simple SSL •
 ---
 💪 Support This Project
 
