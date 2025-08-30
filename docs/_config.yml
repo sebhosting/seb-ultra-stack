@@ -19,5 +19,26 @@ markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sass-converter  # Ensure Sass to CSS conversion
 
+# Language
 lang: en
+
+# Sass Settings (optional if needed)
+sass:
+  style: compressed  # You can change this to 'expanded' for easier debugging
+  load_paths:
+    - "assets/css"   # Make sure Jekyll knows where to find the Sass files
+
+# Enable auto-generated sitemap
+sitemap:
+  exclude:
+    - /assets/
+    - /test/
+
+# Additional settings
+exclude:
+  - README.md
+  - LICENSE
+  - .git
+  - .github
