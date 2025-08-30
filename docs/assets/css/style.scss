@@ -1,152 +1,114 @@
-/* SEB Ultra Stack - Bad to the Bone Dark Theme */
+---
+---
+
 @import "{{ site.theme }}";
 
-/* Custom Colors for Dark Theme */
-:root {
-  --primary: #00ff88; /* Neon Green */
-  --secondary: #ff6b6b; /* Neon Red */
-  --accent: #ffd93d; /* Bright Yellow */
-  --dark: #0a0a0a; /* Very Dark Background */
-  --darker: #1a1a2e; /* Darker Background */
-  --blue: #16213e; /* Dark Blue */
-  --text: #ffffff; /* White Text */
-  --text-muted: #cccccc; /* Muted Text */
-  --border: #333333; /* Border Color */
-  --shadow: rgba(0, 255, 136, 0.2); /* Neon Shadow */
+/* Custom styles for SEB Ultra Stack documentation */
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* Apply Dark Background */
-body {
-  background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 50%, var(--blue) 100%) !important;
-  color: var(--text) !important;
-  font-family: 'Arial', 'Helvetica Neue', sans-serif !important;
-  line-height: 1.6;
+.project-tagline {
+  font-size: 1.2em;
+  font-weight: 300;
 }
 
-/* Header Styling */
-header {
-  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%) !important;
-  border-bottom: 3px solid var(--primary) !important;
-  padding: 2rem 0 !important;
+/* Code blocks styling */
+.highlight {
+  border-left: 4px solid #667eea;
+  padding-left: 1rem;
+  margin: 1rem 0;
 }
 
-header h1 {
-  color: var(--primary) !important;
-  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5) !important;
-  font-weight: 900 !important;
-  font-size: 2.5rem !important;
-  text-align: center !important;
-  margin-bottom: 0.5rem !important;
+/* Navigation improvements */
+.main-content h1, .main-content h2, .main-content h3 {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
-header p {
-  color: var(--text-muted) !important;
-  text-align: center !important;
-  font-size: 1.2rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
+/* Card styling for feature boxes */
+.card {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Main Content Container */
-.container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 2rem !important;
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 15px !important;
-  margin-top: 2rem !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary) !important;
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3) !important;
-  font-weight: bold !important;
+/* Responsive banner image */
+img[alt="SEB Ultra Stack Banner"] {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-h2 {
-  border-bottom: 2px solid var(--primary) !important;
-  padding-bottom: 0.5rem !important;
-  margin-top: 3rem !important;
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  background-color: #667eea;
+  color: white;
 }
 
-h3 {
-  color: var(--secondary) !important;
-  text-shadow: 0 0 10px rgba(255, 107, 107, 0.3) !important;
+/* Table styling */
+table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
 }
 
-p, li {
-  color: var(--text-muted) !important;
-  font-size: 1.1rem !important;
+th, td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
 }
 
-/* Links */
-a {
-  color: var(--primary) !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
-  transition: all 0.3s ease !important;
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
 }
 
-a:hover {
-  color: var(--accent) !important;
-  border-bottom-color: var(--accent) !important;
-  text-shadow: 0 0 8px rgba(255, 211, 61, 0.4) !important;
+/* Alert boxes */
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
 }
 
-/* Code Blocks */
-pre, code {
-  background: var(--dark) !important;
-  border: 1px solid var(--primary) !important;
-  border-radius: 8px !important;
-  color: var(--primary) !important;
-  font-family: 'Courier New', monospace !important;
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bcdff1;
 }
 
-pre {
-  padding: 1.5rem !important;
-  margin: 1.5rem 0 !important;
-  overflow-x: auto !important;
-  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1) !important;
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
 }
 
-code {
-  padding: 0.2rem 0.4rem !important;
-  font-size: 0.9rem !important;
-}
-
-/* Buttons */
-a[href*="paypal"], a[href*="github"], a[href*="download"] {
-  background: linear-gradient(45deg, var(--primary), #4ecdc4) !important;
-  color: var(--dark) !important;
-  padding: 12px 25px !important;
-  border-radius: 25px !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  display: inline-block !important;
-  margin: 10px 10px 10px 0 !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-a[href*="paypal"]:hover, a[href*="github"]:hover, a[href*="download"]:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4) !important;
-  text-shadow: none !important;
-}
-
-/* Lightning Animation */
-@keyframes lightning {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-h1::after, h2::after {
-  content: '⚡' !important;
-  color: var(--accent) !important;
-  animation: lightning 2s infinite !important;
-  margin-left: 0.5rem !important;
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
 }
