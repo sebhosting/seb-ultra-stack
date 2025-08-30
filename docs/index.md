@@ -541,7 +541,7 @@ Want to make the Ultra Stack even more badass?
 
 **Created with 💀 by SEB Hosting**
 
-- **Lead Developer:** Sebastian
+- **Lead Developer:** SEB
 - **Security Consultant:** The Community
 - **Performance Expert:** Redis Gods
 - **Documentation:** Coffee & Late Nights
