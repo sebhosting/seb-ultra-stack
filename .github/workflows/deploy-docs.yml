@@ -1,12 +1,22 @@
 name: Deploy Docs
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/jekyll-build-pages@v1
-      - uses: actions/upload-pages-artifact@v2
-      - uses: actions/deploy-pages@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build the Jekyll site
+        uses: actions/jekyll-build-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+
