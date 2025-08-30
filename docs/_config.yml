@@ -1,42 +1,72 @@
 title: "SEB Ultra Stack Documentation"
 description: "⚡ The Ultimate WordPress Multisite + WooCommerce Stack - Bad to the Bone Documentation"
-baseurl: "/seb-ultra-stack"
-url: "https://sebhosting.github.io"
+baseurl: "/seb-ultra-stack"  # Base URL for the site (ensure this is correct)
+url: "https://sebhosting.github.io"  # GitHub Pages URL
 
 # Theme
-theme: jekyll-theme-midnight
+theme: jekyll-theme-midnight  # Jekyll theme to use
 
 # Custom variables for Dark Theme
 author: "SEB Hosting"
 github_username: sebhosting
 repository: seb-ultra-stack
 
-# Enable syntax highlighting
+# Enable syntax highlighting for code blocks
 highlighter: rouge
 markdown: kramdown
 
-# Plugins
+# Plugins to use
 plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-sass-converter  # Sass to CSS converter
+  - jekyll-sitemap       # Sitemap plugin
+  - jekyll-feed          # RSS feed plugin
+  - jekyll-sass-converter # Sass to CSS converter
 
-# Language
+# Language settings
 lang: en
 
-# Sass Settings
+# Sass Settings (for custom theme styles)
 sass:
-  style: compressed  # Can change to 'expanded' for debugging
+  style: compressed  # Use 'compressed' for production, 'expanded' for development
   load_paths:
-    - "assets/css"   # Ensures Jekyll knows where to find the Sass files
+    - "assets/css"  # Ensures Jekyll knows where to find the Sass files
 
-# Enable auto-generated sitemap
+# Enable auto-generated sitemap (excludes certain paths)
 sitemap:
   exclude:
-    - /assets/
-    - /test/
+    - /assets/        # Exclude assets from the sitemap
+    - /test/          # Exclude test paths from the sitemap
 
-# Additional settings
+# SEO-related configuration
+seo:
+  title: "SEB Ultra Stack Documentation"  # Title to be used in the meta tags
+  description: "Comprehensive documentation for SEB Ultra Stack, a high-performance WordPress Multisite and WooCommerce hosting solution."
+  author: "SEB Hosting"  # Used for meta tag for author
+  image: "assets/banner.png"  # Featured image for social sharing
+  twitter_card: "summary_large_image"  # Twitter card type (summary_large_image is best for images)
+  twitter_username: "@sebhosting"  # Twitter handle
+  open_graph:
+    title: "SEB Ultra Stack Documentation"  # Open Graph title (for social media)
+    type: "website"  # Type of content (website, article, etc.)
+    image: "assets/banner.png"  # Open Graph image (banner.png)
+    url: "https://sebhosting.github.io/seb-ultra-stack/"  # Open Graph URL
+
+# Default configurations for SEO across all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      seo:
+        title: "{{ page.title }} | SEB Ultra Stack Documentation"
+        description: "{{ page.excerpt | default: site.description }}"
+        image: "{{ page.image | default: site.seo.image }}"
+        twitter_card: "summary_large_image"
+        open_graph:
+          title: "{{ page.title }} | SEB Ultra Stack Documentation"
+          description: "{{ page.excerpt | default: site.description }}"
+          image: "{{ page.image | default: site.seo.image }}"
+          url: "{{ page.url | prepend: site.url }}"
+
+# Additional files to exclude from the site build
 exclude:
   - README.md
   - LICENSE
