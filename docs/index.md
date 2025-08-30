@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![SEB Ultra Stack Banner](/assets/banner.png)
+![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
 # ⚡ SEB Ultra Stack Documentation
 Bad to the Bone WordPress Hosting  
