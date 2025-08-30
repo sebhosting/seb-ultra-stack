@@ -428,7 +428,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Made with ❤️ by the SEB Hosting Team
 
-**[Website](https://sebhosting.com)** • **[Twitter](https://twitter.com/sebhosting)** • **[LinkedIn](https://linkedin.com/company/sebhosting)**
+**[Website](https://sebhosting.com)** • **[X.com](https://x.com/@xsebhosting)** • **[LinkedIn](https://linkedin.com/company/sebhosting)**
 
 *Empowering developers to build faster, more secure WordPress sites.*
 
