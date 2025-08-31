@@ -98,6 +98,49 @@ if ! is_done "00_basics"; then
   mark_step "00_basics"
 fi
 
+#!/bin/bash
+
+# ----------------------------
+# PHP 8.4 Installation Helper
+# ----------------------------
+
+echo "==> Adding Ondřej PHP PPA for Nginx..."
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt update
+
+# List of required PHP packages
+PHP_PACKAGES=(
+    php8.4-fpm
+    php8.4-mysql
+    php8.4-xml
+    php8.4-curl
+    php8.4-gd
+    php8.4-mbstring
+    php8.4-intl
+    php8.4-bcmath
+    php8.4-soap
+    php8.4-imagick
+    php8.4-readline
+)
+
+# Retry mechanism
+MAX_RETRIES=3
+for i in $(seq 1 $MAX_RETRIES); do
+    echo "==> Attempt $i: Installing PHP 8.4 packages..."
+    sudo apt update --fix-missing
+    sudo apt install -y "${PHP_PACKAGES[@]}" && break
+    echo "==> Attempt $i failed; retrying in 5 seconds..."
+    sleep 5
+done
+
+# Verify installation
+echo "==> Verifying PHP installation..."
+php -v || { echo "PHP 8.4 installation failed!"; exit 1; }
+
+echo "==> PHP 8.4 installed successfully."
+
 # ------------- Step 01: Nginx + PPAs -------------
 if ! is_done "01_nginx_ppas"; then
   echo "==> Step 01: Add PPAs (PHP & Nginx) and install Nginx"
