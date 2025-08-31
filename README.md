@@ -1,6 +1,6 @@
 ![SEB Ultra Stack Banner](/docs/assets/banner.png)
 
-# 🔥 SEB Ultra Stack - The Ultimate Wordpress Multisite Server Stack 🔥
+# 🔥 SEB Ultra Stack - The Ultimate Server Stack 🔥
 ### The Ultimate WordPress Multisite + WooCommerce Stack
 > **Nginx • PHP 8.4 • Redis • MariaDB • Cloudflare SSL • UFW • Fail2Ban**  
 > *Secure. Scalable. Blazing Fast.*
