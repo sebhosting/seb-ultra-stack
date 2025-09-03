@@ -160,7 +160,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, build, deploy-pages]
     if: always() && (needs.test.result == 'success' && needs.build.result == 'success')
-    
+    permissions: {}
     steps:
       - name: 🎯 Success Notification
         run: |
