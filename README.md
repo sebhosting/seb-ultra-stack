@@ -410,15 +410,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=sebhosting/seb-ultra-stack&type=Date)](https://star-history.com/#sebhosting/seb-ultra-stack&Date)
-
----
-
 <div align="center">
 
-### Made with ❤️ by the SEB Hosting Team
+### Made with 🔥 by the SEB Hosting Team
 
 **[Website](https://sebhosting.com)** • **[X.com](https://x.com/@xsebhosting)** • **[LinkedIn](https://linkedin.com/company/sebhosting)**
 
