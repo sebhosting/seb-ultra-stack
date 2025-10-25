@@ -1,4 +1,6 @@
 name: 🚀 Deploy Install Script
+permissions:
+  contents: read
 
 on:
   push:
