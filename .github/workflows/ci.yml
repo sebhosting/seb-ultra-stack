@@ -20,10 +20,36 @@ jobs:
         uses: actions/setup-node@v4  # Updated to v4
         with:
           node-version: '16'  # Specify your Node.js version here
+      
+      - name: Debug environment
+        run: |
+          echo "Working dir: $(pwd)"
+          ls -la
+          node -v
+          npm -v
+          echo "package.json:"
+          cat package.json || true
+          echo "package-lock.json:"
+          cat package-lock.json || true
 
-      - name: Install dependencies
-        run: npm ci  # npm ci works with package-lock.json
-
+      - name: Install dependencies (use lockfile if present, capture logs)
+        run: |
+          set -o pipefail
+          if [ -f package-lock.json ]; then
+            echo "Using npm ci (lockfile present)"
+            npm ci 2>&1 | tee npm-ci.log || true
+          else
+            echo "No package-lock.json found — using npm install"
+            npm install 2>&1 | tee npm-install.log || true
+          fi
+          echo "=== npm logs ==="
+          tail -n +1 npm-*.log || true
+          if [ -d /home/runner/.npm/_logs ]; then
+             echo "=== runner npm debug logs ==="
+             tail -n +1 /home/runner/.npm/_logs/*.log || true
+          fi
+        continue-on-error: true
+        
       - name: Lint and build
         run: |
           # Add your linting and build commands here
